@@ -11,8 +11,13 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0.1
-    - name: Run the default task
-      run: |
-        gem install bundler
-        make install
-        make lint test
+        bundler-cache: true
+
+    - name: Install dependencies
+      run: make install
+
+    - name: Run Rubocop
+      run: make lint
+
+    - name: Run test
+      run: make test
