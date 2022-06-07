@@ -6,6 +6,8 @@ require "ipgeobase"
 require "minitest/autorun"
 require "bundler/setup"
 require "simplecov"
+require "webmock/minitest"
+
 SimpleCov.start
 Bundler.require
 
