@@ -5,16 +5,13 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in ipgeobase.gemspec
 gemspec
 
-gem "rake", "~> 13.0"
-
-gem "minitest", "~> 5.0"
-
-gem "rubocop", "~> 1.7"
-
+gem "addressable"
 gem "nokogiri-happymapper", require: "happymapper"
 
-gem "webmock", require: "webmock/minitest"
-
-gem "addressable"
-
-gem "simplecov", require: false, group: :test
+group :develpment do
+  gem "minitest", "~> 5.0"
+  gem "rake", "~> 13.0"
+  gem "rubocop", "~> 1.7"
+  gem "simplecov", require: false, group: :test
+  gem "webmock", require: "webmock/minitest"
+end

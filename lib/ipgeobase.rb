@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "uri"
 require "open-uri"
 require "addressable"
@@ -8,7 +10,7 @@ module Ipgeobase
   autoload "IpMetaData", "ipgeobase/ip_meta_data"
 
   def self.lookup(ip)
-      template = Addressable::Template.new("#{URL}{/ip}")
+    template = Addressable::Template.new("#{URL}{/ip}")
     uri = template.expand ip: ip
     response = Net::HTTP.get_response(uri)
     IpMetaData.parse(response.body)
